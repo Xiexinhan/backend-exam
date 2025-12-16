@@ -1,16 +1,16 @@
 package main
 
-type Employee struct{}
+import (
+	"assembly_line/service"
+)
 
-type Item1 struct{}
+func main() {
+	// 建立流水線，5個員工
+	assembly_line := service.NewAssemblyLine(5)
 
-type Item2 struct{}
+	// 新增物品：每種物品各10件
+	assembly_line.AddItems(10, 10, 10)
 
-type Item3 struct{}
-
-type Item interface {
-	// Process 這是一個耗時操作
-	Process()
+	// 啟動流水線
+	assembly_line.Start()
 }
-
-func main() {}
